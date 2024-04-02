@@ -60,9 +60,23 @@
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\CategoryRepository.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
+    <Compile Include="EntityFramework\EfAboutDal.cs" />
+    <Compile Include="EntityFramework\EfCategoryDal.cs" />
+    <Compile Include="EntityFramework\EfContactDal.cs" />
+    <Compile Include="EntityFramework\EfContentDal.cs" />
+    <Compile Include="EntityFramework\EfHeadingDal.cs" />
+    <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202403201409105_mig1.cs" />
     <Compile Include="Migrations\202403201409105_mig1.Designer.cs">
       <DependentUpon>202403201409105_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404011947339_mig_writer_edit.cs" />
+    <Compile Include="Migrations\202404011947339_mig_writer_edit.Designer.cs">
+      <DependentUpon>202404011947339_mig_writer_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202404012047320_mig_writertitle_add.cs" />
+    <Compile Include="Migrations\202404012047320_mig_writertitle_add.Designer.cs">
+      <DependentUpon>202404012047320_mig_writertitle_add.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,6 +95,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202403201409105_mig1.resx">
       <DependentUpon>202403201409105_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404011947339_mig_writer_edit.resx">
+      <DependentUpon>202404011947339_mig_writer_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202404012047320_mig_writertitle_add.resx">
+      <DependentUpon>202404012047320_mig_writertitle_add.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
