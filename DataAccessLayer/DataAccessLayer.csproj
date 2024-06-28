@@ -52,20 +52,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
+    <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IImageFileDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\CategoryRepository.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="EntityFramework\EfAboutDal.cs" />
+    <Compile Include="EntityFramework\EfAdminDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
+    <Compile Include="EntityFramework\EfImageFileDal.cs" />
     <Compile Include="EntityFramework\EfMessageDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202403201409105_mig1.cs" />
@@ -99,6 +103,14 @@
     <Compile Include="Migrations\202405202056534_contact_adddate.cs" />
     <Compile Include="Migrations\202405202056534_contact_adddate.Designer.cs">
       <DependentUpon>202405202056534_contact_adddate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406181608044_mig_imageFiles.cs" />
+    <Compile Include="Migrations\202406181608044_mig_imageFiles.designer.cs">
+      <DependentUpon>202406181608044_mig_imageFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202406181705008_mig_adminAdd.cs" />
+    <Compile Include="Migrations\202406181705008_mig_adminAdd.designer.cs">
+      <DependentUpon>202406181705008_mig_adminAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,6 +150,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202405202056534_contact_adddate.resx">
       <DependentUpon>202405202056534_contact_adddate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406181608044_mig_imageFiles.resx">
+      <DependentUpon>202406181608044_mig_imageFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202406181705008_mig_adminAdd.resx">
+      <DependentUpon>202406181705008_mig_adminAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
