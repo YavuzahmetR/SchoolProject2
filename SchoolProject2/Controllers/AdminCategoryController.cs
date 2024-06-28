@@ -9,11 +9,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace SchoolProject2.Controllers
+namespace SchoolProject2.Controllers    
 {
     public class AdminCategoryController : Controller
     {
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
+        [Authorize(Roles="C,B")]
         public ActionResult Index()
         {
             var categoryvalues = cm.GetList();

@@ -1,5 +1,7 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +19,20 @@ namespace SchoolProject2.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+        [HttpGet]
+        public ActionResult GetAllContent()
+        {
+            var values = cm.GetList();
+
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult GetAllContent(string p)
+        {
+
+            var values = cm.GetList(p);
+            return View(values);
         }
         public ActionResult ContentByHeading(int id)
         {

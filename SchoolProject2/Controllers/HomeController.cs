@@ -31,5 +31,10 @@ namespace SchoolProject2.Controllers
         {
             return View();
         }
+        [AllowAnonymous]
+        public ActionResult HomePage()
+        {
+            return View();
+        }
     }
 }

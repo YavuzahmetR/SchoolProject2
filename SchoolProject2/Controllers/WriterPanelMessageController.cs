@@ -11,22 +11,27 @@ using System.Web.Mvc;
 
 namespace SchoolProject2.Controllers
 {
-    public class MessageController : Controller
+    public class WriterPanelMessageController : Controller
     {
-        // GET: Message
 
         MessageManager mm = new MessageManager(new EfMessageDal());
         MessageValidator messagevalidator = new MessageValidator();
 
-        public ActionResult Inbox(string p)
+        public ActionResult Inbox()
         {
+            string p = (string)Session["WriterMail"];
             var messagelist = mm.GetListInbox(p);
             return View(messagelist);
         }
-        public ActionResult Sendbox(string p)
+        public ActionResult Sendbox()
         {
+            string p = (string)Session["WriterMail"];
             var messagelist = mm.GetListSendbox(p);
             return View(messagelist);
+        }
+        public PartialViewResult MessageListMenu()
+        {
+            return PartialView();
         }
         public ActionResult GetInboxMessageDetails(int id)
         {
@@ -38,19 +43,20 @@ namespace SchoolProject2.Controllers
             var values = mm.GetByID(id);
             return View(values);
         }
-
         [HttpGet]
-        public ActionResult NewMessage() 
-        {            
+        public ActionResult NewMessage()
+        {
             return View();
         }
         [HttpPost]
         public ActionResult NewMessage(Message p)
         {
             ValidationResult results = messagevalidator.Validate(p);
+            string sender = (string)Session["WriterMail"];
             if (results.IsValid)
             {
-                p.MessageDate=DateTime.Parse(DateTime.Now.ToShortDateString());
+                p.SenderMail = sender;
+                p.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                 mm.MessageAdd(p);
                 return RedirectToAction("SendBox");
             }
