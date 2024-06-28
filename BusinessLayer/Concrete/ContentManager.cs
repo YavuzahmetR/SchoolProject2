@@ -36,6 +36,11 @@ namespace BusinessLayer.Concrete
             return _contentDal.Get(x => x.ContentID == id);
         }
 
+        public List<Content> GetList(string p)
+        {
+            return _contentDal.List(x => x.ContentValue.Contains(p));
+        }
+
         public List<Content> GetList()
         {
             return _contentDal.List();
@@ -44,6 +49,11 @@ namespace BusinessLayer.Concrete
         public List<Content> GetListByID(int id)
         {
             return _contentDal.List(x => x.HeadingID == id);
+        }
+
+        public List<Content> GetListByWriter(int id)
+        {
+            return _contentDal.List(x => x.WriterID == id);
         }
     }
 }
